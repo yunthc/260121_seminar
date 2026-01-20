@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>문항 이미지 업로드</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* 폼 요소 간격 및 스타일 */
+    .form-group {
+      margin-bottom: 1.2rem;
+      text-align: left;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: #555;
+    }
+
+    input[type="text"],
+    select,
+    input[type="file"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 1rem;
+      background-color: #fff;
+    }
+
+    input[type="file"] {
+      padding: 6px; /* 파일 인풋은 패딩이 조금 다름 */
+    }
+
+    /* 로딩 인디케이터 (숨김 상태) */
+    .loader {
+      display: none;
+      margin: 10px 0;
+      color: var(--primary-color);
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>문항 이미지 업로드</h2>
+    <p>문항 정보와 이미지를 업로드해주세요.</p>
+
+    <form id="upload-form">
+      <div class="form-group">
+        <label for="item-id">문항 ID</label>
+        <input type="text" id="item-id" name="itemId" placeholder="예: 2024-MAR-Q30" required>
+      </div>
+
+      <div class="form-group">
+        <label for="grade">대상 학년</label>
+        <select id="grade" name="grade" required>
+          <option value="" disabled selected>학년을 선택하세요</option>
+          <option value="고1">고등학교 1학년</option>
+          <option value="고2">고등학교 2학년</option>
+          <option value="고3">고등학교 3학년</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="domain">영역</label>
+        <select id="domain" name="domain" required>
+          <option value="" disabled selected>영역을 선택하세요</option>
+          <option value="대수">대수 (Algebra)</option>
+          <option value="해석">해석 (Analysis)</option>
+          <option value="기하">기하 (Geometry)</option>
+          <option value="확률과 통계">확률과 통계 (Statistics)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="image-file">이미지 첨부</label>
+        <input type="file" id="image-file" name="imageFile" accept="image/*" required>
+      </div>
+
+      <div id="loader" class="loader">업로드 중입니다... 잠시만 기다려주세요.</div>
+      
+      <button type="submit" id="submit-btn" class="btn google-btn">업로드 하기</button>
+    </form>
+
+    <a href="index.html" class="btn nav-btn">메인으로 돌아가기</a>
+  </div>
+
+  <script type="module" src="src/imageMain.js"></script>
+</body>
+</html>

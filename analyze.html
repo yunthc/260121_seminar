@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>결과 분석 및 갤러리</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    /* 분석 페이지 전용 스타일 */
+    .container {
+      max-width: 800px; /* 그래프와 앨범을 위해 너비 확장 */
+    }
+
+    .section-title {
+      border-bottom: 2px solid #eee;
+      padding-bottom: 10px;
+      margin: 30px 0 20px 0;
+      color: #333;
+      text-align: left;
+    }
+
+    /* 그래프 영역 */
+    .chart-container {
+      position: relative;
+      height: 300px;
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+
+    /* 이미지 앨범(그리드) 영역 */
+    .album-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 15px;
+      margin-bottom: 2rem;
+    }
+
+    .album-item {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      transition: transform 0.2s;
+    }
+
+    .album-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .album-img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover; /* 이미지가 찌그러지지 않고 꽉 차게 */
+      display: block;
+    }
+
+    .album-info {
+      padding: 10px;
+      font-size: 0.85rem;
+      text-align: left;
+    }
+
+    .album-info strong {
+      display: block;
+      color: var(--primary-color);
+      margin-bottom: 4px;
+    }
+
+    .no-data {
+      color: #999;
+      font-style: italic;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>나의 학습 데이터 분석</h2>
+    <p>설문 결과 통계와 업로드한 문항 이미지를 확인하세요.</p>
+
+    <h3 class="section-title">📊 설문조사 결과 (평균 점수)</h3>
+    <div class="chart-container">
+      <canvas id="surveyChart"></canvas>
+    </div>
+
+    <h3 class="section-title">🖼️ 업로드된 문항 앨범</h3>
+    <div id="image-gallery" class="album-grid">
+      <div class="no-data">로딩 중...</div>
+    </div>
+
+    <a href="index.html" class="btn nav-btn">메인으로 돌아가기</a>
+  </div>
+
+  <script type="module" src="src/analyzeMain.js"></script>
+</body>
+</html>

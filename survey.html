@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>수학 학습 설문조사</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* 설문 페이지 전용 스타일 추가 */
+    .survey-item {
+      margin-bottom: 2rem;
+      text-align: left;
+      padding: 1rem;
+      background: #fafafa;
+      border-radius: 8px;
+    }
+    .question-text {
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+      display: block;
+    }
+    .options {
+      display: flex;
+      justify-content: space-between;
+      gap: 5px;
+    }
+    .options label {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 0.8rem;
+      cursor: pointer;
+      width: 18%;
+    }
+    .options input[type="radio"] {
+      margin-bottom: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>수학 학습 태도 설문</h2>
+    <p>다음 문항을 읽고 자신에게 해당하는 정도를 선택해주세요.</p>
+
+    <form id="survey-form">
+      <div class="survey-item">
+        <span class="question-text">1. 나는 수학 수업 시간이 기다려지고 재미있다.</span>
+        <div class="options">
+          <label><input type="radio" name="q1" value="1" required>전혀<br>아니다</label>
+          <label><input type="radio" name="q1" value="2">아니다</label>
+          <label><input type="radio" name="q1" value="3">보통이다</label>
+          <label><input type="radio" name="q1" value="4">그렇다</label>
+          <label><input type="radio" name="q1" value="5">매우<br>그렇다</label>
+        </div>
+      </div>
+
+      <div class="survey-item">
+        <span class="question-text">2. 나는 어려운 수학 문제를 만나도 해결할 수 있다는 자신감이 있다.</span>
+        <div class="options">
+          <label><input type="radio" name="q2" value="1" required>전혀<br>아니다</label>
+          <label><input type="radio" name="q2" value="2">아니다</label>
+          <label><input type="radio" name="q2" value="3">보통이다</label>
+          <label><input type="radio" name="q2" value="4">그렇다</label>
+          <label><input type="radio" name="q2" value="5">매우<br>그렇다</label>
+        </div>
+      </div>
+
+      <div class="survey-item">
+        <span class="question-text">3. 수학은 나의 장래 희망이나 실생활에 도움이 된다고 생각한다.</span>
+        <div class="options">
+          <label><input type="radio" name="q3" value="1" required>전혀<br>아니다</label>
+          <label><input type="radio" name="q3" value="2">아니다</label>
+          <label><input type="radio" name="q3" value="3">보통이다</label>
+          <label><input type="radio" name="q3" value="4">그렇다</label>
+          <label><input type="radio" name="q3" value="5">매우<br>그렇다</label>
+        </div>
+      </div>
+
+      <div class="survey-item">
+        <span class="question-text">4. 나는 수학 시험이나 평가를 생각하면 긴장되고 불안하다.</span>
+        <div class="options">
+          <label><input type="radio" name="q4" value="1" required>전혀<br>아니다</label>
+          <label><input type="radio" name="q4" value="2">아니다</label>
+          <label><input type="radio" name="q4" value="3">보통이다</label>
+          <label><input type="radio" name="q4" value="4">그렇다</label>
+          <label><input type="radio" name="q4" value="5">매우<br>그렇다</label>
+        </div>
+      </div>
+
+      <div class="survey-item">
+        <span class="question-text">5. 수학 문제가 잘 풀리지 않아도 포기하지 않고 끝까지 노력한다.</span>
+        <div class="options">
+          <label><input type="radio" name="q5" value="1" required>전혀<br>아니다</label>
+          <label><input type="radio" name="q5" value="2">아니다</label>
+          <label><input type="radio" name="q5" value="3">보통이다</label>
+          <label><input type="radio" name="q5" value="4">그렇다</label>
+          <label><input type="radio" name="q5" value="5">매우<br>그렇다</label>
+        </div>
+      </div>
+
+      <button type="submit" class="btn google-btn">제출하기</button>
+    </form>
+    
+    <a href="index.html" class="btn nav-btn">메인으로 돌아가기</a>
+  </div>
+
+  <script type="module" src="src/surveyMain.js"></script>
+</body>
+</html>

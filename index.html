@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>설문조사 플랫폼</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Survey Web App</h1>
+
+        <div id="login-view">
+            <p>서비스를 이용하려면 로그인해주세요.</p>
+            <button id="google-login-btn" class="btn google-btn">Google 계정으로 로그인</button>
+        </div>
+
+        <div id="app-view" class="hidden">
+            <h2 id="user-greeting">환영합니다!</h2>
+            <p>원하시는 메뉴를 선택하세요.</p>
+            
+            <div class="nav-container">
+                <a href="survey.html" class="btn nav-btn">설문조사 하기</a>
+                <a href="image.html" class="btn nav-btn">이미지 업로드</a>
+                <a href="analyze.html" class="btn nav-btn">결과 분석</a>
+            </div>
+
+            <button id="logout-btn" class="btn logout-btn">로그아웃</button>
+        </div>
+    </div>
+
+    <script type="module" src="src/indexMain.js"></script>
+</body>
+</html>
