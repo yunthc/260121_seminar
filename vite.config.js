@@ -8,7 +8,7 @@ export default defineConfig({
                 main: resolve(__dirname, 'index.html'),
                 analyze: resolve(__dirname, 'analyze.html'),
                 survey: resolve(__dirname, 'survey.html'),
-                imageUpload: resolve(__dirname, 'imageUpload.html'),
+                imageUpload: resolve(__dirname, 'image.html'),
              },
          },
      },
