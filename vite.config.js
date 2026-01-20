@@ -6,6 +6,9 @@ export default defineConfig({
         rollupOptions: {
             input: {
                 main: resolve(__dirname, 'index.html'),
+                analyze: resolve(__dirname, 'analyze.html'),
+                survey: resolve(__dirname, 'survey.html'),
+                imageUpload: resolve(__dirname, 'imageUpload.html'),
              },
          },
      },
