@@ -9,13 +9,13 @@
   <style>
     /* 분석 페이지 전용 스타일 */
     .container {
-      max-width: 800px; /* 그래프와 앨범을 위해 너비 확장 */
+      max-width: 800px;
     }
 
     .section-title {
       border-bottom: 2px solid #eee;
       padding-bottom: 10px;
-      margin: 30px 0 20px 0;
+      margin: 40px 0 20px 0;
       color: #333;
       text-align: left;
     }
@@ -53,7 +53,7 @@
     .album-img {
       width: 100%;
       height: 150px;
-      object-fit: cover; /* 이미지가 찌그러지지 않고 꽉 차게 */
+      object-fit: cover;
       display: block;
     }
 
@@ -67,6 +67,40 @@
       display: block;
       color: var(--primary-color);
       margin-bottom: 4px;
+    }
+
+    /* --- [추가됨] 응답 리스트 스타일 --- */
+    .response-list {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .response-card {
+      background: #f9f9f9;
+      border-left: 5px solid var(--primary-color);
+      padding: 15px;
+      border-radius: 4px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      text-align: left;
+    }
+
+    .response-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .score-badge {
+      font-weight: bold;
+      color: var(--primary-color);
+    }
+
+    .response-detail {
+      font-size: 0.95rem;
+      line-height: 1.6;
     }
 
     .no-data {
@@ -85,6 +119,11 @@
     <h3 class="section-title">📊 설문조사 결과 (평균 점수)</h3>
     <div class="chart-container">
       <canvas id="surveyChart"></canvas>
+    </div>
+
+    <h3 class="section-title">📝 상세 응답 (흥미도 높은 순)</h3>
+    <div id="response-list" class="response-list">
+      <div class="no-data">데이터를 불러오는 중...</div>
     </div>
 
     <h3 class="section-title">🖼️ 업로드된 문항 앨범</h3>
